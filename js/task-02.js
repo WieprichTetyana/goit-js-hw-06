@@ -7,15 +7,7 @@ const ingredients = [
   'Condiments',
 ];
 
-const galleryListEl = document.getElementById('ingredients');
-const fragment = document.createDocumentFragment();
-
-
-ingredients.forEach(ingredient => {
-  const listItem = document.createElement('li');
-  listItem.textContent = ingredient;
-  listItem.classList.add('item');
-  fragment.appendChild(listItem);
-});
-
-gallleryList.appendChild(fragment);
+const ingredientsList = document.querySelector('#ingredients');
+let markup = ""
+markup = ingredients.map(ingredient => `<li class ="item">${ingredient}</li>`).join("");
+ingredientsList.insertAdjacentHTML("afterbegin", markup);
